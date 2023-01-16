@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMD | Log in</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <img src="img/logo.png" alt="logo dmd" width="180px" height="250px">
+      
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Selamat Datang!</p>
+
+      <form action="ladingpage.html" method="post">
+        <div class="input-group mb-3">
+          <input type="text"  id="username" class="form-control" placeholder="Username" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" id="password" class="form-control" placeholder="Password" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Ingat Saya
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="form-control btn btn-primary submit px-3" onclick="return login()">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+  
+      <!-- /.social-auth-links -->
+
+   
+      <p class="mb-0">
+        <a href="register-v2.html" class="text-center">Create User</a>
+      </p>
+      <p class="mb-0">
+        <a href="forgot-password-v2.html" class="text-center">Forgot Password ?</a>
+      </p>
+    
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<a  class="text-center"><small>Developed by Mahasiswa STT-NF @ SI16 2023</small></a>
+<!-- /.login-box -->
+
+</html>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+</body>
+<script type="text/javascript">
+  function login(){
+      // ambil value yang di inputkan oleh user, 
+      // lalu simpan kedalam variable
+      username = document.getElementById("username").value;
+      password = document.getElementById("password").value;
+
+      if(username == "" || password == " "){
+          alert("Username / password Tidak Boleh Kosong");
+          return false;
+      }
+      else if(password.length < 6){
+          alert("Password kurang dari 6 karakter");
+          return false;
+      }
+      else if(username == "Admin" && password == "123456" ){
+          window.location = "ladingpage.html"
+          return false;
+      }else{
+          alert("maaf username dan password salah");
+      }
+  }
+</script>
+</html>
